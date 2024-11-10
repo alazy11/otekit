@@ -1,0 +1,54 @@
+{
+   "login": {
+      "title":"SIGN IN",
+      "note": "Check the option below to login as a Company",
+      "field1":{
+         "title":"User Name",
+         "placeholder":"Enter Your User Name"
+      },
+      "field2":{
+         "title":"Password",
+         "placeholder":"Enter Password"
+      },
+      "field3":{
+         "title":"Secret Key",
+         "placeholder":"Enter Secret Key"
+      },
+      "checkOption":"Sign in as a Company",
+      "register":"Don't have an account ? ",
+      "registerLink":"SIGN UP",
+      "admin":{
+         "title":"SIGN IN ( AS ADMIN )"
+      }
+   },
+
+   "dashboardNav":{
+      "opt1":"Dashboard",
+      "opt2":"SEO Management",
+      "opt3":"Content Management",
+      "opt4":"Media Management",
+      "opt5":"Contact Message",
+      "opt6":"Teams",
+      "opt7":"Testimonials",
+      "opt8":"Partners",
+      "opt9":{
+         "option":"Posts Management",
+         "category":"Post Categories",
+         "post":"Posts"
+      },
+      "opt10":{
+         "option":"Projects Management",
+         "category":"Projects Categories",
+         "post":"Projects"
+      },
+      "opt11":{
+         "option":"Links Management",
+         "category":"Links Categories",
+         "post":"Links"
+      },
+      "opt12":"NewsLetter",
+      "opt13":"Users",
+      "opt14":"Settings"
+   }
+
+}
