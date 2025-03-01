@@ -58,15 +58,15 @@ export function middleware(request) {
    // console.log(authentication(request));
    // if(request.nextUrl.pathname === `${lang}/login` && request.nextUrl.pathname === `${lang}/login`)
    if (authentication(request)) {
-      console.log('a1');
+      // console.log('a1');
       if (getLanguage(request)) {
-         console.log('a2');
+         // console.log('a2');
          return NextResponse.redirect(request.nextUrl);
       } else {
          return NextResponse.next();
       }
    } else {
-      console.log('a12');
+      // console.log('a12');
       // request.nextUrl.pathname = `${lang}/login`;
       // return NextResponse.redirect(request.nextUrl);
       return NextResponse.redirect(new URL(`${lang}/login`,request.nextUrl.origin));

@@ -12,6 +12,7 @@ const SelectGroup = ({
     name,
     readonly,
     required,
+    multiple,
     value,
     handleChange,
     options
@@ -36,6 +37,7 @@ const SelectGroup = ({
         `}
         value={value}
         onChange={handleChange}
+        multiple={multiple || false}
         >
             {
                 options.map((option,index)=>{

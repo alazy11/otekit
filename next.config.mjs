@@ -8,6 +8,18 @@ const nextConfig = {
             port: '',
             pathname: '/600/**',
           },
+          {
+            protocol: 'https',
+            hostname: 't3.ftcdn.net',
+            port: '',
+            pathname: '/**',
+          },
+          {
+            protocol: 'http',
+            hostname: "localhost",
+            port: '4040',
+            pathname: '/**',
+          },
         ],
       },
 };

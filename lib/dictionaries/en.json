@@ -39,12 +39,12 @@
       "opt10":{
          "option":"Projects Management",
          "category":"Projects Categories",
-         "post":"Projects"
+         "project":"Projects"
       },
       "opt11":{
          "option":"Links Management",
          "category":"Links Categories",
-         "post":"Links"
+         "link":"Links"
       },
       "opt12":"NewsLetter",
       "opt13":"Users",

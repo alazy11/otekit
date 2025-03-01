@@ -73,7 +73,7 @@ const SeoPage = () => {
                             </div>
                             <div className="border-t border-solid border-[#eaedf1] px-6 py-[18px]">
                                 <div className="flex ">
-                                <PaginatedItems itemsPerPage={4} />
+                                <PaginatedItems current={"pjj"} itemsPerPage={4} />
                                 </div>
 
                             </div>

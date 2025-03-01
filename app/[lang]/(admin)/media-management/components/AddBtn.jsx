@@ -1,6 +1,10 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
-import { show } from "@/state-management/slices/open-slices/seoFormSlice";
+import { show,setProcess } from "@/state-management/slices/open-slices/seoFormSlice";
+import { show as showNotification ,setNotificationType } from "@/state-management/slices/events/notification-slice";
+import { show as showToast, setToastType, setToastMessage,setToastLoading } from "@/state-management/slices/events/toastSlice";
+
+
 
 const AddBtn = ()=>{
 
@@ -13,7 +17,19 @@ const AddBtn = ()=>{
         min-h-[33px]
         "
         onClick={()=>{
-            dispatch(show(true))
+            dispatch(show(true));
+            dispatch(setProcess('add'));
+// 
+            // dispatch(setNotificationType("warning"));
+            // dispatch(showNotification(true));
+            // dispatch(setToastMessage("add successfully."));
+            // dispatch(showToast(true));
+
+            // setTimeout(() => {
+            //     dispatch(setToastLoading(false))
+            // }, 4000);
+
+
         }}
         >
             <span className="hidden sm:block">

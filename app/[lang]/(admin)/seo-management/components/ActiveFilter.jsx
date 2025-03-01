@@ -23,10 +23,24 @@ const ActiveFilter = ()=> {
             displayName:'page',
             value: searchParams.get('filter_page')
         } : null
+        ,
+        searchParams.get('search') ? 
+        {
+            name:'search',
+            displayName:'search',
+            value: searchParams.get('search')
+        } : null
+        ,
+        searchParams.get('order_by') ? 
+        {
+            name:'order_by',
+            displayName:'order_by',
+            value: searchParams.get('order_by')
+        } : null
     ]
 
     return(
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap ">
             {
                 params.map((item,index)=> {
                     if(item)
@@ -37,7 +51,7 @@ const ActiveFilter = ()=> {
                         ">
                            <div>
                             <span className="font-semibold hidden sm:inline-block">
-                            {item.displayName + ": "}
+                            {item.displayName + ":"+" "}
                             </span>
                             <span>
                             {item.value}

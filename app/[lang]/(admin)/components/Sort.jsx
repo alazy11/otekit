@@ -18,10 +18,10 @@ const Sort = ()=> {
              hover:bg-[#eef2f7] cursor-pointer capitalize
              flex items-center gap-2 min-h-[33px]
              "
-             value={searchParams.get('sort_opt') || "Newest"}
+             value={searchParams.get('order_by') || "Newest"}
              onChange={(e)=>{
                 const params = new URLSearchParams(searchParams.toString());
-                params.set('sort_opt',e.currentTarget.value);
+                params.set('order_by',e.currentTarget.value);
                 router.push(`?${params}`);
              }}
             >

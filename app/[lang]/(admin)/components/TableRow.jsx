@@ -9,14 +9,14 @@ const TableRow = ({item,status=[]}) => {
     const dropdownRef = useRef(null);
 
     return (
-        <tr className="text-[14px] text-[#313b5e] font-normal hover:bg-[#fafafa] transition-colors
+        <tr className="text-[14px] cursor-default text-[#313b5e] font-normal hover:bg-[#fafafa] transition-colors
         border-b border-solid border-[#eaedf1]
         ">
             <td></td>
             {
                 item.map((ele,index)=>{
                     return (
-                    <td key={index} className="text-start p-[0.85rem]">
+                    <td key={index} title={ele} className="text-start p-[0.85rem]">
                         {
 
                             // (status.length > 0 && index + 1 === status[index]) ? 

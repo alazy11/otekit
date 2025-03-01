@@ -2,7 +2,7 @@
 import Image from "next/image";
 // import profile from "@/public/images/profile.jpeg";
 import profile from "@/public/images/profile.jpeg";
-
+import TitleSkeleton from "./skeleton/TitleSkeleton";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
@@ -52,7 +52,11 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="h-full flex items-center justify-center">
-                        <h4 className="text-[#707793] text-base sm:text-lg font-bold uppercase">{headerTitle}</h4>
+                        <h4 className="text-[#707793] text-base sm:text-lg font-bold uppercase">
+                            
+                            {
+                            headerTitle ? headerTitle : <TitleSkeleton count={1} />
+                            }</h4>
                     </div>
                     </div>
                     <div className="flex items-center gap-1 h-full">

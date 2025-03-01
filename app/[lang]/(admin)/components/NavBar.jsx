@@ -10,7 +10,7 @@ const NavBar = () => {
     const dictionary = useSelector(state => state.lang.dictionary);
 
     return (
-        <nav className="w-full h-[82%] overflow-y-auto scroll-nav pb-5">
+        <nav className="w-full h-[82%] overflow-y-auto overflow-x-hidden scroll-nav pb-5">
             <ul className="grid grid-cols-1">
                 <li className="w-full">
                     <Link href={'/' + lang + '/dashboard'} className={`flex items-center text-[#9097a7] hover:text-white text-base
@@ -157,13 +157,18 @@ const NavBar = () => {
 
 
                 <li className="w-full transition-all">
-                    <Link href={'/' + lang + '/post-management'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
+                    <button href={'/' + lang + '/post'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
                     px-[25px] py-[10px] border-s-[3px] border-solid gap-3 whitespace-nowrap transition-all
-                    ${path.startsWith('/' + lang + '/post-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
-                    `}  >
+                    ${path.startsWith('/' + lang + '/post') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                    `}
+                    onClick={(e)=>{
+                        let ele = e.currentTarget;
+                        ele.nextElementSibling.classList.toggle('h-20');
+                    }}
+                    >
                         <div className="flex items-center gap-3">
                             <span className={`text-[22px] flex items-center justify-center
-                            ${path.startsWith('/' + lang + '/post-management') ? 'text-[var(--main-color)]' : ''}
+                            ${path.startsWith('/' + lang + '/post') ? 'text-[var(--main-color)]' : ''}
                             `}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.245 2h9.51c1.159 0 1.738 0 2.206.163a3.05 3.05 0 0 1 1.881 1.936C21 4.581 21 5.177 21 6.37v14.004c0 .858-.985 1.314-1.608.744a.946.946 0 0 0-1.284 0l-.483.442a1.657 1.657 0 0 1-2.25 0a1.657 1.657 0 0 0-2.25 0a1.657 1.657 0 0 1-2.25 0a1.657 1.657 0 0 0-2.25 0a1.657 1.657 0 0 1-2.25 0l-.483-.442a.946.946 0 0 0-1.284 0c-.623.57-1.608.114-1.608-.744V6.37c0-1.193 0-1.79.158-2.27c.3-.913.995-1.629 1.881-1.937C5.507 2 6.086 2 7.245 2" opacity=".5"></path><path fill="currentColor" d="M7 6.75a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5zm3.5 0a.75.75 0 0 0 0 1.5H17a.75.75 0 0 0 0-1.5zM7 10.25a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5zm3.5 0a.75.75 0 0 0 0 1.5H17a.75.75 0 0 0 0-1.5zM7 13.75a.75.75 0 0 0 0 1.5h.5a.75.75 0 0 0 0-1.5zm3.5 0a.75.75 0 0 0 0 1.5H17a.75.75 0 0 0 0-1.5z"></path></svg>
                             </span>
@@ -176,21 +181,21 @@ const NavBar = () => {
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
-                    </Link>
-                    <div className="hidden">
+                    </button>
+                    <div className="h-0 transition-all duration-300 overflow-hidden">
                         <ul className="grid grid-cols-1 ps-3">
                             <li className="px-[25px] py-[5px]">
-                                <Link href={'/' + lang + '/project-management'} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
+                                <Link href={'/' + lang + '/post-categories'} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
                                 px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                                ${path.startsWith('/' + lang + '/post-categories') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt9.category}
                                 </Link>
                             </li>
                             <li className="px-[25px] py-[5px]">
-                                <Link href={"#"} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
+                                <Link href={'/' + lang + '/posts'} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
                                 px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                                ${path.startsWith('/' + lang + '/posts') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt9.post}
                                 </Link>
@@ -200,10 +205,15 @@ const NavBar = () => {
                 </li>
 
                 <li className="w-full transition-all">
-                    <Link href={'/' + lang + '/project-management'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
+                    <button href={'/' + lang + '/project-management'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
                     px-[25px] py-[10px] border-s-[3px] border-solid gap-3 whitespace-nowrap transition-all
                     ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
-                    `}  >
+                    `}  
+                    onClick={(e)=>{
+                        let ele = e.currentTarget;
+                        ele.nextElementSibling.classList.toggle('h-20');
+                    }}
+                    >
                         <div className="flex items-center gap-3">
                             <span className={`text-[22px] flex items-center justify-center
                             ${path.startsWith('/' + lang + '/project-management') ? 'text-[var(--main-color)]' : ''}
@@ -219,21 +229,21 @@ const NavBar = () => {
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
-                    </Link>
-                    <div className="hidden">
+                    </button>
+                    <div className="h-0 transition-all duration-300 overflow-hidden">
                         <ul className="grid grid-cols-1 ps-3">
                             <li className="px-[25px] py-[5px]">
-                                <Link href={'/' + lang + '/newsletter'} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
-                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/newsletter') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                                <Link href={'/' + lang + '/project-management'} className={`flex items-center text-[#9097a7] hover:text-white translate-x-0 translate-y-0 hover:translate-x-[5px] text-[15px]
+                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all duration-300 ease-in-out
+                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt10.category}
                                 </Link>
                             </li>
                             <li className="px-[25px] py-[5px]">
-                                <Link href={"#"} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
-                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/content') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                            <Link href={'/' + lang + '/project-management'} className={`flex items-center text-[#9097a7] hover:text-white translate-x-0 translate-y-0 hover:translate-x-[5px] text-[15px]
+                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all duration-300 ease-in-out
+                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt10.project}
                                 </Link>
@@ -244,10 +254,15 @@ const NavBar = () => {
 
 
                 <li className="w-full transition-all">
-                    <Link href={'/' + lang + '/link-management'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
+                    <button href={'/' + lang + '/link-management'} className={`flex items-center justify-between text-[#9097a7] hover:text-white text-base
                     px-[25px] py-[10px] border-s-[3px] border-solid gap-3 whitespace-nowrap transition-all
                     ${path.startsWith('/' + lang + '/link-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
-                    `}  >
+                    `}  
+                    onClick={(e)=>{
+                        let ele = e.currentTarget;
+                        ele.nextElementSibling.classList.toggle('h-20');
+                    }}
+                    >
                         <div className="flex items-center gap-3">
                             <span className={`text-[22px] flex items-center justify-center
                             ${path.startsWith('/' + lang + '/link-management') ? 'text-[var(--main-color)]' : ''}
@@ -263,21 +278,21 @@ const NavBar = () => {
                                 <path d="m6 9 6 6 6-6" />
                             </svg>
                         </span>
-                    </Link>
-                    <div className="hidden">
+                    </button>
+                    <div className="h-0 transition-all duration-300 overflow-hidden">
                         <ul className="grid grid-cols-1 ps-3">
                             <li className="px-[25px] py-[5px]">
-                                <Link href={"#"} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
-                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/content') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                            <Link href={'/' + lang + '/project-management'} className={`flex items-center text-[#9097a7] hover:text-white translate-x-0 translate-y-0 hover:translate-x-[5px] text-[15px]
+                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all duration-300 ease-in-out
+                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt11.category}
                                 </Link>
                             </li>
                             <li className="px-[25px] py-[5px]">
-                                <Link href={"#"} className={`flex items-center text-[#9097a7] hover:text-white hover:translate-x-1.5 text-[15px]
-                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all
-                                ${path.startsWith('/' + lang + '/content') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
+                            <Link href={'/' + lang + '/project-management'} className={`flex items-center text-[#9097a7] hover:text-white translate-x-0 translate-y-0 hover:translate-x-[5px] text-[15px]
+                                px-[25px] py-[2.5px] gap-3 whitespace-nowrap transition-all duration-300 ease-in-out
+                                ${path.startsWith('/' + lang + '/project-management') ? 'border-[var(--main-color)] text-white' : 'border-transparent'}
                                 `}  >
                                     {dictionary.dashboardNav.opt11.link}
                                 </Link>

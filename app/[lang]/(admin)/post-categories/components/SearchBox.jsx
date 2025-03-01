@@ -23,7 +23,6 @@ const SearchBox = () => {
                                     params.delete("search");
                                     router.push(`?${params}`);
                                 }
-
                             }}
                             />
                                     <span className="absolute z-10 text-lg ltr:left-[11px] rtl:right-[11px] text-[#8486a7] top-1/2 -translate-y-1/2">

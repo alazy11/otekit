@@ -7,7 +7,6 @@ import React from "react";
 const validation = (e, setIsValid, setErrorMessage) => {
   let element = e.currentTarget;
   if (element.validity.valueMissing && element.value.trim() === '') {
-    console.log(element.value);
     setIsValid(false);
     setErrorMessage("you missing value");
     element.setCustomValidity("you missing value");
@@ -42,6 +41,7 @@ const FormGroup = ({
   step,
   value,
   handleChange,
+  handleBlur = null,
   lang,
   children
 }) => {
@@ -50,7 +50,6 @@ const FormGroup = ({
   const [errorMessage, setErrorMessage] = useState(
     "set the correct value!",
   );
-  const [language, setLanguage] = useState('en');
 
   return (
     <div className="w-full grid grid-cols-1 gap-3 content-start">
@@ -86,7 +85,8 @@ const FormGroup = ({
               }}
               aria-describedby={id + "error-message"}
               onBlur={(e) => {
-                console.log("blur")
+                if(handleBlur)
+                  handleBlur(e, setIsValid, setErrorMessage);
                 validation(e, setIsValid, setErrorMessage);
               }}
               onInvalid={(e) => {
@@ -112,8 +112,10 @@ const FormGroup = ({
               }}
               aria-describedby={id + "error-message"}
               onBlur={(e) => {
-                console.log("blur")
+                if(handleBlur)
+                  handleBlur(e, setIsValid, setErrorMessage);
                 validation(e, setIsValid, setErrorMessage);
+
               }}
               onInvalid={(e) => {
                 console.log("error message");

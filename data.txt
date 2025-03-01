@@ -1,0 +1,5 @@
+                                            <th className=" text-start w-[15%] p-[0.85rem] capitalize">Key</th>
+                                            <th className=" text-start p-[0.85rem] capitalize w-[40%]">Content</th>
+                                            <th className=" text-start p-[0.85rem] capitalize w-[25%]">Create Date</th>
+                                            <th className=" text-start p-[0.85rem] capitalize w-[15%]">Page</th>
+                                            <th className=" text-start p-[0.85rem] capitalize w-[12%]">Actions</th>
